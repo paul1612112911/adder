@@ -1,12 +1,22 @@
 #include <stdio.h>
 
+int sub_number(int a, int b);
+int add_number(int a, int b);
+
 int main() {
-    printf("=== C Language Calculator ===\n");
+    printf("system checks OK\n");
     
-    // Role C
-    int result_sub = 50 - 30;
-    printf("Subtraction: 50 - 30 = %d\n", result_sub);
+    int result_sub = sub_number(50, 30);
+    printf("Subtraction: a - b = %d\n", result_sub);
     
     printf("System Check OK\n");
     return 0;
+}
+
+int sub_number(int a, int b){
+    return a - b;
+}
+
+int add_number(int a, int b){
+    return a + b;
 }
