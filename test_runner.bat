@@ -1,12 +1,13 @@
-# !/ bin/ bash
-echo " Running Build Test..."
+@echo off
+echo Running Build Test...
+
 gcc main.c -o app
-if [ $? -eq 0 ]; then
-echo " Compilation Successful!"
-./ app
-echo " Execution Test Passed!"
-exit 0
-else
-echo " Compilation Failed!"
-exit 1
-fi
+if %errorlevel%==0 (
+    echo Compilation Successful!
+    app.exe
+    echo Execution Test Passed!
+    exit /b 0
+) else (
+    echo Compilation Failed!
+    exit /b 1
+)
